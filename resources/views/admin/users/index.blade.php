@@ -1,4 +1,12 @@
-@extends('layouts.admin')
+@extends('layouts.layout')
+
+@section('breadcrumb')
+@parent
+<li class="breadcrumb-item active">
+    User
+</li>
+@endsection
+
 @section('content')
 @can('user_create')
     <div style="margin-bottom: 10px;" class="row">
@@ -16,7 +24,7 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <table class=" table table-bordered table-striped table-hover datatable">
+            <table id="example1" class="table table-bordered table-hover" style="width:100%">
                 <thead>
                     <tr>
                         <th width="10">
@@ -122,7 +130,11 @@
   dtButtons.push(deleteButton)
 @endcan
 
-  $('.datatable:not(.ajaxTable)').DataTable({ buttons: dtButtons })
+//   $('.datatable:not(.ajaxTable)').DataTable({ buttons: dtButtons })
+    $("#example1").DataTable({
+        "responsive": true,
+        "autoWidth": false,
+    });
 })
 
 </script>

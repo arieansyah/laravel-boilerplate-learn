@@ -1,4 +1,18 @@
-@extends('layouts.admin')
+@extends('layouts.layout')
+
+@section('breadcrumb')
+@parent
+<li class="breadcrumb-item">
+    <a href="{{ route('admin.permissions.index') }}">
+        Permission
+    </a>
+</li>
+
+<li class="breadcrumb-item active">
+    View
+</li>
+@endsection
+
 @section('content')
 
 <div class="card">

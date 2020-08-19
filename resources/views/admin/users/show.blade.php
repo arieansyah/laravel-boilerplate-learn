@@ -1,4 +1,18 @@
-@extends('layouts.admin')
+@extends('layouts.layout')
+
+@section('breadcrumb')
+@parent
+<li class="breadcrumb-item">
+    <a href="{{ route('admin.users.index') }}">
+        User
+    </a>
+</li>
+
+<li class="breadcrumb-item active">
+    View
+</li>
+@endsection
+
 @section('content')
 
 <div class="card">
